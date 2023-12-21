@@ -5,16 +5,15 @@ const ejs = require('ejs');
 const app = express();
 const port = 3000;
 
-// Set EJS as the view engine
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the Gitpub App!');
+  res.render('index', { drinks });
 });
 
-// Create a new route for /drinks
-app.get('/drinks', (req, res) => {
-  res.render('index', { drinks }); // Render index.ejs and pass drinks data
+app.get('/drinks/:id', (req, res) => {
+  const id = req.params.id;
+  res.render('show', { drinks, id });
 });
 
 app.listen(port, () => {
