@@ -41,28 +41,19 @@
     }
   </style>
 </head>
+<h1>At Foo Bar</h1>
+<h2><%= capitalizeFirstLetter(drink.name) %></h2>
+<img src="<%= drink.image %>" alt="<%= drink.name %> Image">
+<h3>Price: $<%= drink.price %></h3>
+<a href="/drinks" style="display: block; margin-top: 10px;">Back</a>
+` }) %>
 
-// when i go on the localhost, it gives me an error on line 47 and i cant figure out why
-<body>
-    <h1>At foo bar</h1>
-    <h2><%= capitalizeFirstLetter(drinks[id].name) %></h2>
-    <img src="<%= addPngExtension(drinks[id].image) %>" alt="<%= drinks[id].name %>">
-    <h3>Price: $<%= drinks[id].price.toFixed(2) %></h3>
-    <a href="/">Back</a>
-  </body>
-
- 
-  <script>
-   
-    function capitalizeFirstLetter(str) {
-      return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
-
-    function addPngExtension(url) {
-      return url + '.png';
-    }
-  </script>
+<script>
+// function to capitalize the first letter of a string
+function capitalizeFirstLetter(str) {
+  return str.replace(/^./, (char) => char.toUpperCase());
+}
+</script>
 </body>
 
 </html>
