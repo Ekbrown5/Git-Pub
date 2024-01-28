@@ -17,23 +17,16 @@
     h1 {
       color: #007BFF;
     }
-
   </style>
 </head>
 <body>
   <h1>Welcome to GitPub</h1>
   <ul>
     <% drinks.forEach((drink, index) => { %>
-      <li><a href="/drinks/<%= index %>"><%= capitalizeFirstLetter(drink.name) %></a></li>
+      <li><a href="/drinks/<%= index %>"><%= drink.name %></a></li>
     <% }); %>
   </ul>
-` }) %>
 
-<script>
-  // JavaScript function to capitalize the first letter of a string
-  function capitalizeFirstLetter(str) {
-    return str.replace(/^./, (char) => char.toUpperCase());
-  };
-</script>
+
 </body>
 </html>
